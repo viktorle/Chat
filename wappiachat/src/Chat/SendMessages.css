@@ -1,0 +1,18 @@
+#sendMessagesContainer{
+    text-align:center;
+}
+textarea{
+    font-size:15px;
+    height:150px;
+    width:80%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    textarea{
+     width:250px;
+    }
+}

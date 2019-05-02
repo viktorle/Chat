@@ -1,0 +1,24 @@
+#readMessagesBar{
+    text-align:center;
+    height: 250px;
+    overflow:scroll;
+    background-color: #f2f4f5;
+    margin:10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#readMessagesContainer{
+    text-align:left;
+}
+
+li{
+    list-style-type: none;
+    font-size:20px;
+}
+
+button{
+    margin-top:10px;
+}
