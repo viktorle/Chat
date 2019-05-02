@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import TopBar from '../TopBar/TopBar';
 class SelectFriend extends Component {
     state = { 
-        avaibleFriends: this.props.model.getFriends()
+        avaibleFriends: this.props.model.availableFriends 
      }
 
-    handleSelectedFriend(friend){
+    handleSelectedFriend(friend){ //Stores the selected friend in the model
         this.props.model.friend = friend;
     }
 
-    render() { 
+    render() { //Renders the friends
         let avaibleFriends = this.state.avaibleFriends.map((friend,index) => (
             <ul key={"friends" + index}>
                 <Link to="Chat">
@@ -22,7 +22,7 @@ class SelectFriend extends Component {
         <React.Fragment> 
             <TopBar/>
             <p>Hello {this.props.model.user.name}! Select your friend</p>
-                {avaibleFriends}
+            {avaibleFriends}
         </React.Fragment> );
     }
 }

@@ -7,12 +7,9 @@ import SelectFriend from './SelectFriend/SelectFriend';
 import HandleChat from './Chat/HandleChat';
 
 class App extends Component{
-  render(){
+  render(){ //Handle the routeing of the app. The app starts by calling the Login component
   return (
     <div className="App">
-     {/* <header className="App-header">
-      
-      </header>*/}
       <Route 
         exact path = "/"
         render = {() => <Login model = {modelInstance}/>}

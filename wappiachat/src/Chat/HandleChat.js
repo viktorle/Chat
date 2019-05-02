@@ -4,28 +4,20 @@ import SendMessages from './SendMessages';
 import './HandleChat.css';
 import TopBar from '../TopBar/TopBar';
 class HandleChat extends Component {
-    state = { 
-        user: "",
-        friend: ""
+    constructor(props){
+    super(props)
+    this.state = { 
+        user:this.props.model.user,
+        friend:this.props.model.friend
      }
-    componentDidMount(){
-        this.setState({
-            user:this.props.model.user,
-            friend:this.props.model.friend
-        })
     }
-    update(){
-        console.log(this.props.model.getMessages())
-        this.setState({
-         messages:this.props.model.messages
-        })
-    }
-    render() { 
+       
+    render() { //Renders the ReadMessages view and the SendMessages view
         return ( 
             <React.Fragment>
             <TopBar/>
             <header>
-            <p id="welcomeText">Okey {this.state.user.name}! Write something to {this.state.friend.name}</p>
+                <p id="welcomeText">Okey {this.state.user.name}! Write something to {this.state.friend.name}</p>
             </header>
             <div id="messagesContainer">
                 <div className="d-flex justify-content-center h-100">
@@ -35,6 +27,12 @@ class HandleChat extends Component {
                     </div>
                 </div>
             </div>
+            <footer className="footer mt-auto py-3">
+                <div className="container">
+                    <br></br>
+                    <span>Made By Viktor Lemón</span>
+                </div>
+            </footer>
             </React.Fragment>
          );
     }

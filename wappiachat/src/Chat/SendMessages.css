@@ -19,9 +19,3 @@ label{
     width:100%;
     text-align:center;
 }
-
-@media (max-width: 800px) {
-    textarea{
-     width:300px;
-    }
-}

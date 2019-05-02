@@ -14,6 +14,9 @@
 #readMessagesContainer{
     text-align:left;
 }
+.sentMessage{
+    margin-top: 10px;
+}
 
 .sentMessage li{
     list-style-type: none;

@@ -1,33 +1,25 @@
 import React, { Component } from 'react';
 import './SendMessages.css';
 class SendMessages extends Component {
-    constructor(){
-    super()
+    //Handles the user input message and then sends it.
+    constructor(props){
+    super(props)
     this.state = { 
-        from: "2",
-        to: "1",
+        from: this.props.users.user.id,
+        to: this.props.users.friend.id,
         messages: "",
      }
      this.handleText = this.handleText.bind(this);
      this.handleMessage = this.handleMessage.bind(this);
     }
-
-    componentDidMount(){
-        this.setState({
-            from: 1/*this.props.users.user.id*/,
-            to: 2 //this.props.users.friend.id
-        })
-    }
  
-    handleText(event){
+    handleText(event){ //Stores users entered message
         this.setState({
             messages:event.target.value
         })
     }
 
-    handleMessage(){
-        console.log(typeof this.state.messages)
-        console.log({message:this.state.messages})
+    handleMessage(){ //Sends the message
         const url = `https://messenger.wappia.tech/conversations/from/`+ this.state.from + `/to/` + this.state.to
         fetch(url,{
             method: 'post',

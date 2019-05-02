@@ -10,10 +10,9 @@ class Login extends Component {
             availableUsers: []
         }
     }
-    componentDidMount(){
+    componentDidMount(){ //Fetches the accounts from Wappia
         const url = `https://messenger.wappia.tech/accounts`
         fetch(url).then(response => {return response.json()}).then((data) => {
-           console.log(data)
            let availableUsers = data.accounts.map((user) => (
                 {name:user.name,id:user.id}
             ))  
@@ -23,13 +22,13 @@ class Login extends Component {
         })
     }
 
-    handleSelectedUser(user){
+    handleSelectedUser(user){ //Stores the slected user in the model and removes the selected person from the accounts. (So the person can't chat with it self)
         let availableFriends = this.state.availableUsers.filter(person => person.name !== user.name)
         this.props.model.availableFriends = availableFriends
         this.props.model.user = user
     }
 
-    render() { 
+    render() { //Renders the accounts
         let availableUsers = this.state.availableUsers.map((user,index) => (
             <ul key={"users" + index}>
                 <Link to="SelectFriend">
@@ -40,9 +39,9 @@ class Login extends Component {
             ))
         return ( 
             <React.Fragment>
-            <TopBar/>
-            <p>Who are you?</p> 
-            {availableUsers}
+                <TopBar/>
+                <p>Who are you?</p> 
+                {availableUsers}
             </React.Fragment>
          );
     }
