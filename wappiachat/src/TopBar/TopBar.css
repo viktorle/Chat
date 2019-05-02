@@ -1,0 +1,10 @@
+#navBar{
+    background-color: black;
+    border-radius: 0px;
+}
+
+#navBar p{
+    margin-top:10px;
+    font-size: 20px;
+    color:white;
+}

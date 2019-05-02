@@ -15,7 +15,7 @@ class SendMessages extends Component {
     componentDidMount(){
         this.setState({
             from: 1/*this.props.users.user.id*/,
-            to:2 //this.props.users.friend.id
+            to: 2 //this.props.users.friend.id
         })
     }
  
@@ -41,14 +41,15 @@ class SendMessages extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <div id="sendMessagesContainer" className="col-sm-12">
-                <label className="col-sm-12">
-                    <p>Message:</p>
-                    <textarea onChange={this.handleText} placeholder="..."/>
-                    <br></br>
-                <button className="btn btn-primary" onClick={this.handleMessage}>Send Messages</button>
-                </label>
-                
+                <div id="sendMessagesContainer">
+                    <label>
+                        <div className="container h-100">
+                            <p>Message:</p>
+                            <textarea onChange={this.handleText} className="form-control" placeholder="..."/>
+                            <br></br>
+                            <button className="btn btn-info" onClick={this.handleMessage}>Send Messages <i className="far fa-paper-plane"></i></button>
+                        </div>
+                    </label>
                 </div>
             </React.Fragment>
          );

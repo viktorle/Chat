@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
+import TopBar from '../TopBar/TopBar';
 
 class Login extends Component {
     constructor(){
@@ -39,7 +40,8 @@ class Login extends Component {
             ))
         return ( 
             <React.Fragment>
-            <h1>Who are you?</h1> 
+            <TopBar/>
+            <p>Who are you?</p> 
             {availableUsers}
             </React.Fragment>
          );

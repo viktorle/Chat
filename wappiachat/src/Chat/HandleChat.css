@@ -1,7 +1,8 @@
-header{
 
-}
 #messagesBar {
-    margin: 10px;
-    background-color: #e6e3e3;
+    background-color: #eaeaea;
+}
+
+#welcomeText{
+    color:black;
 }

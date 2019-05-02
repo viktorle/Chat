@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import TopBar from '../TopBar/TopBar';
 class SelectFriend extends Component {
     state = { 
         avaibleFriends: this.props.model.getFriends()
@@ -19,7 +20,8 @@ class SelectFriend extends Component {
         ))
         return ( 
         <React.Fragment> 
-            <h1>Select your friend {this.props.model.user.name}!</h1>
+            <TopBar/>
+            <p>Hello {this.props.model.user.name}! Select your friend</p>
                 {avaibleFriends}
         </React.Fragment> );
     }

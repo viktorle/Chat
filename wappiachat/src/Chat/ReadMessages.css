@@ -1,9 +1,10 @@
 #readMessagesBar{
     text-align:center;
     height: 250px;
+    max-width:1140px;
     overflow:scroll;
-    background-color: #f2f4f5;
-    margin:10px;
+    margin-top:10px;
+    background-color: #5bc0de;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -14,10 +15,13 @@
     text-align:left;
 }
 
-li{
+.sentMessage li{
     list-style-type: none;
     font-size:20px;
+    color:#fafdfe;
+    margin-left:15px;
 }
+
 
 button{
     margin-top:10px;
