@@ -15,8 +15,9 @@ class ReadMessages extends Component {
     componentDidMount(){
         this.updateMessages()
         //this.intervall = setInterval( () => this.updateMessages(), 10000) 
+
         //Not the best solution for an autoupdate function but the ide is to set a time intervall
-        //which calls the update function. And after that will the 
+        //which calls the update function. And after that will the componentWillMount reactive the interval.
     }
 
     componentWillMount(){
@@ -45,29 +46,24 @@ class ReadMessages extends Component {
     }
    
     render() { //Renders all the messages
-        let sentMessages = this.state.sentMessages.map((result,index) => (   //Returns all the messages sent by the person
+        let allMessages = this.state.sentMessages.concat(this.state.receivedMessages)
+        allMessages = allMessages.sort(function(a, b) { //Sorts all messages by timestamp so the last one appears in the bottom
+            return a.timestamp - b.timestamp;
+        })
+
+        allMessages = allMessages.map((result,index) => (   //Returns all the messages sent by the person
             <ul className="sentMessage" key={"messagesContainer" + index}>
                 <li key={"from" + index}><b>From:</b> {result.messages.from}</li>
                 <li key={"messages" + index}><b>Message:</b> {result.messages.message}</li>
             </ul>
-        ))
-        let receivedMessages = this.state.receivedMessages.map((result,index) => (   //Returns all the messages sended by the friend
-            <ul className="sentMessage"  key={"messagesContainer" + index}>
-                <li key={"to" + index}><b>From:</b> {result.messages.from}</li>
-                <li key={"recivedMessages" + index}><b>Message:</b> {result.messages.message}</li>
-            </ul>
+            
         ))
         return ( 
             <React.Fragment>
                 <button className="btn btn-primary" onClick={this.updateMessages}>Update <i className="fas fa-sync"></i></button>
                 <div className="container h-100" id="readMessagesContainer">
-                    <div className="col-sm-6">
-                        <p><u>Person {this.state.to}</u></p>
-                        <div id="received" className="readMessagesBar">{receivedMessages}</div>
-                    </div>
-                    <div className="col-sm-6">
-                        <p><u>Person {this.state.from}</u></p>
-                        <div id="sent" className="readMessagesBar">{sentMessages}</div>
+                    <div className="col-sm-12">
+                        <div className="readMessagesBar">{allMessages}</div>
                     </div>
                 </div>
             </React.Fragment>
