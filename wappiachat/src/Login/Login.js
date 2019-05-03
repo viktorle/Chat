@@ -11,6 +11,7 @@ class Login extends Component {
         }
     }
     componentDidMount(){ //Fetches the accounts from Wappia
+        this.setState({loading:true})
         const url = process.env.REACT_APP_WAPPIA_ACCOUNTS_URL;
         fetch(url).then(response => {return response.json()}).then((data) => {
            let availableUsers = data.accounts.map((user) => (

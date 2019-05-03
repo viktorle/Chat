@@ -17,7 +17,7 @@ class HandleChat extends Component {
             <React.Fragment>
             <TopBar/>
             <header>
-                <p id="welcomeText">Okey {this.state.user.name}! Write something to {this.state.friend.name}</p>
+                <p id="welcomeText">Okey {this.state.user.name}({this.state.user.id})! Write something to {this.state.friend.name}({this.state.friend.id})</p>
             </header>
             <div id="messagesContainer">
                 <div className="d-flex justify-content-center h-100">

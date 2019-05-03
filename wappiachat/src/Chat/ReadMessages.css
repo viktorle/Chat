@@ -11,12 +11,32 @@
     border-top-right-radius: 10px;
 }
 
-#readMessagesBar{
+#readMessagesContainer p{
     text-align:left;
+    margin-left:15px;
+    margin-top: 10px;
+    font-size:20px;
+    color:#fafdfe;
+    
 }
+
+.readMessagesBar{
+    text-align:left;
+    padding: 0px;
+}
+
 .sentMessage{
     margin-top: 10px;
 }
+
+#sent {
+    text-align:left;
+}
+
+#received{
+    text-align:left;
+}
+
 
 .sentMessage li{
     list-style-type: none;
@@ -33,5 +53,8 @@ button{
 @media (max-width: 800px) {
     #readMessagesContainer{
        margin:15px;
+}
+    .readMessagesBar{
+    padding: 0px;
 }
 }
