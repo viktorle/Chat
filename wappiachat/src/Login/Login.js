@@ -31,7 +31,7 @@ class Login extends Component {
 
     render() { //Renders the accounts
         let availableUsers = this.state.availableUsers.map((user,index) => (
-            <ul key={"users" + index}>
+            <ul key={"users" + index} className="usersList">
                 <Link to="SelectFriend">
                 <li onClick={()=> this.handleSelectedUser(user)} key={"user" + user.name}>{user.name}</li>
                 </Link>
@@ -41,7 +41,7 @@ class Login extends Component {
         return ( 
             <React.Fragment>
                 <TopBar/>
-                <p>Who are you?</p> 
+                <p className="loginText">Who are you?</p> 
                 {availableUsers}
             </React.Fragment>
          );

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import TopBar from '../TopBar/TopBar';
+import '../Login/Login.css';
 class SelectFriend extends Component {
     state = { 
         avaibleFriends: this.props.model.availableFriends 
@@ -12,7 +13,7 @@ class SelectFriend extends Component {
 
     render() { //Renders the friends
         let avaibleFriends = this.state.avaibleFriends.map((friend,index) => (
-            <ul key={"friends" + index}>
+            <ul key={"friends" + index} className="usersList">
                 <Link to="Chat">
                     <li onClick={()=> this.handleSelectedFriend(friend)} key={"friend" + friend.name}>{friend.name}</li>
                 </Link>
@@ -21,7 +22,7 @@ class SelectFriend extends Component {
         return ( 
         <React.Fragment> 
             <TopBar/>
-            <p>Hello {this.props.model.user.name}! Select your friend</p>
+            <p className="loginText">Hello {this.props.model.user.name}! Select your friend</p>
             {avaibleFriends}
         </React.Fragment> );
     }
