@@ -1,4 +1,4 @@
-#readMessagesBar{
+#readMessagesContainer{
     text-align:center;
     height: 250px;
     max-width:1140px;
@@ -11,7 +11,7 @@
     border-top-right-radius: 10px;
 }
 
-#readMessagesContainer{
+#readMessagesBar{
     text-align:left;
 }
 .sentMessage{
@@ -25,7 +25,13 @@
     margin-left:15px;
 }
 
-
 button{
     margin-top:10px;
+    margin-bottom:10px;
+}
+
+@media (max-width: 800px) {
+    #readMessagesContainer{
+       margin:15px;
+}
 }

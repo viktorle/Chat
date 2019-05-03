@@ -20,7 +20,7 @@ class SendMessages extends Component {
     }
 
     handleMessage(){ //Sends the message
-        const url = `https://messenger.wappia.tech/conversations/from/`+ this.state.from + `/to/` + this.state.to
+        const url = process.env.REACT_APP_WAPPIA_CONVERSATION_URL + this.state.from + `/to/` + this.state.to
         fetch(url,{
             method: 'post',
             body: JSON.stringify({message:this.state.messages}),

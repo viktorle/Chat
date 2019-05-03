@@ -23,7 +23,7 @@ class ReadMessages extends Component {
     }
 
     updateMessages(){//Updates the messages when the "update"-button in pressed
-        const url = `https://messenger.wappia.tech/conversations/from/` + this.state.from + `/to/` + this.state.to
+        const url = process.env.REACT_APP_WAPPIA_CONVERSATION_URL + this.state.from + `/to/` + this.state.to
         fetch(url).then(response => {return response.json()}).then((data) => {
            let sendedMessages = data.messages.map((result) => (
                 {messages:result}
@@ -36,7 +36,7 @@ class ReadMessages extends Component {
    
     render() { //Renders all the messages
         let messages = this.state.sendedMessages.map((result,index) => (   
-            <ul className="sentMessage" style={result.messages.from === "1" ? {textAlign:"left"} : {textAlign:"center"} } key={"messagesContainer" + index}>
+            <ul className="sentMessage" key={"messagesContainer" + index}>
                 <li key={"from" + index}><b>From:</b> {result.messages.from}</li>
                 <li key={"messages" + index}><b>Message:</b> {result.messages.message}</li>
             </ul>
@@ -44,8 +44,8 @@ class ReadMessages extends Component {
         return ( 
             <React.Fragment>
                 <button className="btn btn-primary" onClick={this.updateMessages}>Update <i className="fas fa-sync"></i></button>
-                <div className="container h-100" id="readMessagesBar">
-                    <div id="readMessagesContainer">{messages}</div>
+                <div className="container h-100" id="readMessagesContainer">
+                    <div id="readMessagesBar">{messages}</div>
                 </div>
             </React.Fragment>
          );

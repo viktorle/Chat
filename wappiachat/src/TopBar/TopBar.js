@@ -7,7 +7,7 @@ class TopBar extends Component {
         return (
             <nav id="navBar" className="navbar">
                 <Link to="/">
-                <p className="col-sm-4 ">Start over</p>
+                    <p className="col-sm-4">Start over</p>
                 </Link>
                 <p className="col-sm-4"id="appTitle">The Chat App</p>
             </nav>
